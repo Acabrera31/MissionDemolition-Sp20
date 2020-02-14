@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slingshot : MonoBehaviour
+
+public class Slingshot  :  MonoBehaviour
 {
     // fields set in the Unity Inspector pane
     [Header("Set in Inspector")] // a
-public GameObject prefabProjectile;
+    public GameObject prefabProjectile;
     public float velocityMult = 8f;
     // fields set dynamically
     [Header("Set Dynamically")]
@@ -16,11 +17,11 @@ public GameObject prefabProjectile;
     public GameObject projectile; // b
     public bool aimingMode; // b
 
-    private RigidbodyprojectileRigidbody;
+    private Rigidbody projectileRigidbody;
 
     void Awake()
     {
-        Transform launchPointTrans = transform.FindChild("LaunchPoint");
+        Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
         launchPos =
@@ -67,7 +68,8 @@ Input.mousePosition; // c
         );
         // Find the delta from the launchPos to the mousePos3D
         Vector3 mouseDelta = mousePos3D - launchPos;
-        // Limit mouseDelta to the radius of the Slingshot SphereCollider // dfloat maxMagnitude = this.GetComponent<SphereCollider>().radius;
+        // Limit mouseDelta to the radius of the Slingshot SphereCollider // d
+        float maxMagnitude = this.GetComponent<SphereCollider>().radius;
         if (mouseDelta.magnitude > maxMagnitude)
         {
             mouseDelta.Normalize();
