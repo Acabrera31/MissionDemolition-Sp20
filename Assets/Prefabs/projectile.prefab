@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5290689835146890481}
   - component: {fileID: 2758020149236146170}
   m_Layer: 0
-  m_Name: projectile
-  m_TagString: Untagged
+  m_Name: Projectile
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
